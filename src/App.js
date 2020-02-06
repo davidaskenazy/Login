@@ -1,6 +1,6 @@
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-
+import {FontAwesome, MaterialIcons, AntDesign} from '@expo/vector-icons'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator, navigationOptions } from 'react-navigation-stack';
 import Login from './modules/Login/containers/login';
@@ -49,33 +49,45 @@ const BottomNavigator = createBottomTabNavigator({
   Home:{
     screen : HomeNavigator,
     navigationOptions: {
-      title : 'Inicio'
+      title : 'Inicio',
+      tabBarIcon: ({tintColor}) =><FontAwesome name="home" color={tintColor} size={28}></FontAwesome>
     }
   },
   Agenda:{
     screen : AgendaNavigator,
     navigationOptions: {
-      title : 'Agenda'
+      title : 'Agenda',
+      tabBarIcon: ({tintColor}) =><MaterialIcons name="book" color={tintColor} size={28}></MaterialIcons>
     }
   },
   Push:{
     screen : PushNavigator,
     navigationOptions: {
-      title : 'Push'
+      title : 'Push',
+      tabBarIcon: ({tintColor}) =><AntDesign name="notification" color={tintColor} size={28}></AntDesign>
     }
   },
   GeoMap:{
     screen : GeoNavigator,
     navigationOptions: {
-      title : 'Geo'
+      title : 'Geo',
+      tabBarIcon: ({tintColor}) =><MaterialIcons name="location-on" color={tintColor} size={28}></MaterialIcons>
     }
   },
   Perfil:{
     screen : PerfilNavigator,
     navigationOptions: {
-      title : 'Perfil'
+      title : 'Perfil',
+      tabBarIcon: ({tintColor}) =><MaterialIcons name="person-pin" color={tintColor} size={28}></MaterialIcons>
     }
   },
+},{
+  tabBarOptions:{
+    activeTintColor : 'black',
+    activeBackgroundColor: 'white',
+    inactiveTintColor: 'gray',
+    inactiveBackgroundColor: 'white'
+  }
 })
 
 
