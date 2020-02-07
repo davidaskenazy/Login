@@ -1,5 +1,5 @@
 import * as Expo from "expo";
-import * as Font from 'expo-font';
+import  * as Font from 'expo-font';
 import React, { Component } from "react";
 import { StyleProvider } from "native-base";
 import App from "../App";
@@ -16,10 +16,10 @@ export default class Setup extends Component {
   componentDidMount() {
     this.loadFonts();
   }
-  async loadFonts() {
+  async loadFonts(){
     await Font.loadAsync({
-      Roboto: require("../../node_modules/native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("../../node_modules/native-base/Fonts/Roboto_medium.ttf"),
+       Roboto: require("../../node_modules/native-base/Fonts/Roboto.ttf"),
+         Roboto_medium: require("../../node_modules/native-base/Fonts/Roboto_medium.ttf"),
     });
     this.setState({ isReady: true });
   }

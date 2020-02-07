@@ -1,6 +1,6 @@
 /*ESTE SIII!!!*/ 
 import { Container, Content, Card, CardItem, Text, Body, Button,Item, Label, Input, Icon} from "native-base";
-import { KeyboardAvoidingView, StatusBar} from 'react-native';
+import { KeyboardAvoidingView, StatusBar, AsyncStorage} from 'react-native';
 import React, { Component } from 'react';
 import { setLightEstimationEnabled } from "expo/build/AR";
 import {FontAwesome, Ionicons} from '@expo/vector-icons';
@@ -11,11 +11,27 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 export default class Login extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      username: ''
+    }
+  }
+
   static navigationOptions=({navigation}) =>{
     return{header:()=><Header text ="Login"/>}
   }
 
-  navegar = (param) => this.props.navigation.navigate(param)
+  navegar = async(param) => {
+    let userLogin = {
+      user : this.state.username,
+      perm : true 
+    }
+    AsyncStorage.setItem('userLogin', JSON.stringify(userLogin))
+    //AsyncStorage.removeItem('userLogin')
+    this.props.navigation.navigate(param)
+  }
+  
 
   render() {
     return (
@@ -37,7 +53,7 @@ export default class Login extends Component {
               <Body style={styles.body}>
               <Item inlineLabel>
                 <FontAwesome active name='users' size={20}></FontAwesome>
-              <Input placeholder='Nombre de usuario'/>
+              <Input placeholder='Nombre de usuario' onChangeText={(username) => this.setState({username})}/>
             </Item>
             <Item inlineLabel last>
             <Ionicons active name='md-lock' size={20}></Ionicons>

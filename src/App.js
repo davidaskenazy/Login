@@ -1,8 +1,9 @@
 import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator,  } from 'react-navigation';
 import {FontAwesome, MaterialIcons, AntDesign} from '@expo/vector-icons'
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { createStackNavigator, navigationOptions } from 'react-navigation-stack';
+import { createBottomTabNavigator,  } from 'react-navigation-tabs';
+import { createStackNavigator, navigationOptions,  } from 'react-navigation-stack';
+
 import Login from './modules/Login/containers/login';
 import Register from './modules/Login/containers/register';
 import Inicio from './modules/Home/containers/inicio';
@@ -11,16 +12,13 @@ import Agenda from './modules/Agenda/containers/agenda';
 import Push from './modules/Push/containers/push';
 import GeoMap from './modules/GeoMap/containers/geomap';
 import Perfil from './modules/Perfil/containers/perfil';
+import Loading from './modules/sections/containers/loading';
 
 const LoginNavigator = createStackNavigator({
   Login,
   Register
 },{defaultNavigationOptions : {header : ()=> <Header text="Registro"/>}});
 
-
-
-//empieza
-//Inicio
 const HomeNavigator = createStackNavigator({
   Inicio
 },{defaultNavigationOptions : {header : ()=> <Header text="Inicio"/>}});
@@ -91,9 +89,12 @@ const BottomNavigator = createBottomTabNavigator({
 })
 
 
+
+
 const SwitchNavigator = createSwitchNavigator(
   {
   UserLogin : LoginNavigator,
+  Loading,
   Home: BottomNavigator
   },
   {
