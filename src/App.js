@@ -14,6 +14,8 @@ import GeoMap from './modules/GeoMap/containers/geomap';
 import Perfil from './modules/Perfil/containers/perfil';
 import Loading from './modules/sections/containers/loading';
 
+import data from './dataGlobal'
+
 const LoginNavigator = createStackNavigator({
   Login,
   Register
@@ -48,35 +50,35 @@ const BottomNavigator = createBottomTabNavigator({
     screen : HomeNavigator,
     navigationOptions: {
       title : 'Inicio',
-      tabBarIcon: ({tintColor}) =><FontAwesome name="home" color={tintColor} size={28}></FontAwesome>
+      tabBarIcon: ({tintColor}) =><FontAwesome name="home" color={tintColor} size={data.sizeIcon}></FontAwesome>
     }
   },
   Agenda:{
     screen : AgendaNavigator,
     navigationOptions: {
       title : 'Agenda',
-      tabBarIcon: ({tintColor}) =><MaterialIcons name="book" color={tintColor} size={28}></MaterialIcons>
+      tabBarIcon: ({tintColor}) =><MaterialIcons name="book" color={tintColor} size={data.sizeIcon}></MaterialIcons>
     }
   },
   Push:{
     screen : PushNavigator,
     navigationOptions: {
       title : 'Push',
-      tabBarIcon: ({tintColor}) =><AntDesign name="notification" color={tintColor} size={28}></AntDesign>
+      tabBarIcon: ({tintColor}) =><AntDesign name="notification" color={tintColor} size={data.sizeIcon}></AntDesign>
     }
   },
   GeoMap:{
     screen : GeoNavigator,
     navigationOptions: {
       title : 'Geo',
-      tabBarIcon: ({tintColor}) =><MaterialIcons name="location-on" color={tintColor} size={28}></MaterialIcons>
+      tabBarIcon: ({tintColor}) =><MaterialIcons name="location-on" color={tintColor} size={data.sizeIcon}></MaterialIcons>
     }
   },
   Perfil:{
     screen : PerfilNavigator,
     navigationOptions: {
       title : 'Perfil',
-      tabBarIcon: ({tintColor}) =><MaterialIcons name="person-pin" color={tintColor} size={28}></MaterialIcons>
+      tabBarIcon: ({tintColor}) =><MaterialIcons name="person-pin" color={tintColor} size={data.sizeIcon}></MaterialIcons>
     }
   },
 },{

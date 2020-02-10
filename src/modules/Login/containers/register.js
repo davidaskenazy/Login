@@ -22,7 +22,7 @@ export default class Register extends Component {
                             <Body style={styles.body}>
                                 <Item inlineLabel>
                                     <MaterialIcons active name='email' size={20}/>
-                                    <Input placeholder='Correo electronico'/>
+                                    <Input placeholder='Correo electronico' keyboardType="email-address"/>
                                 </Item>
                                 <Item inlineLabel>
                                     <FontAwesome active name='user' size={20}/>
@@ -30,7 +30,7 @@ export default class Register extends Component {
                                 </Item>
                                 <Item inlineLabel last>
                                     <FontAwesome active name='lock' size={20}/>
-                                    <Input placeholder='Contraseña' />
+                                    <Input placeholder='Contraseña' secureTextEntry={true}/>
                                 </Item>
                             </Body>
                         </CardItem>

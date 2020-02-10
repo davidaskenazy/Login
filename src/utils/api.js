@@ -1,4 +1,4 @@
-const URL = 'https://yts.mx/api/v2/list_movies.json'
+const URL = 'https://yts.mx/api/v2/list_movies.jsonx'
 
 class API{
 

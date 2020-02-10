@@ -57,7 +57,7 @@ export default class Login extends Component {
             </Item>
             <Item inlineLabel last>
             <Ionicons active name='md-lock' size={20}></Ionicons>
-              <Input placeholder='Contraseña'/>
+              <Input placeholder='Contraseña' secureTextEntry={true}/>
             </Item>
               </Body>
             </CardItem>
